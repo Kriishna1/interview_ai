@@ -1,0 +1,24 @@
+/* Custom Scrollbar Styles */
+::-webkit-scrollbar {
+    width: 8px; /* Adjust the width */
+  }
+  
+  ::-webkit-scrollbar-track {
+    background: #1e1e1e; /* Darker track for dark theme */
+  }
+  
+  ::-webkit-scrollbar-thumb {
+    background: #555; /* Darker thumb */
+    border-radius: 4px;
+  }
+  
+  ::-webkit-scrollbar-thumb:hover {
+    background: #777; /* Slightly lighter on hover */
+  }
+  
+  /* Ensure it applies to full page */
+  html, body {
+    scrollbar-color: #555 #1e1e1e; /* For Firefox */
+    overflow-y: auto; /* Ensure scrolling is enabled */
+  }
+  
