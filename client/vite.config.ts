@@ -9,4 +9,13 @@ export default defineConfig({
       "@": path.resolve(__dirname, "./src"),
     },
   },
+  server: {
+    proxy: {
+      '/api': {
+        target: 'https://yp1f86w8f0.execute-api.ap-south-1.amazonaws.com/dev',
+        changeOrigin: true,
+        secure: false,
+      },
+    },
+  },
 })
