@@ -67,9 +67,6 @@ const Form = () => {
           message: "Interview Created Successfully",
         };
         addNotification(newNotification);
-        setTimeout(() => {
-          window.location.reload();
-        }, 1000);
       }
     } catch (error) {
       // console.error("Error creating interview:");
