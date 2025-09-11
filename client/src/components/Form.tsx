@@ -3,6 +3,7 @@ import { useState, useRef, KeyboardEvent } from "react";
 import { ExperienceLevel } from "@/vite-env";
 import { useNotification } from "@/components/Notifications/NotificationContext";
 import { Notification } from "@/vite-env";
+import { useNavigate } from "react-router-dom";
 const Form = () => {
   const { addNotification } = useNotification();
   const [tags, setTags] = useState<string[]>([]);
@@ -12,6 +13,7 @@ const Form = () => {
   const [experienceLevel, setExperienceLevel] =
     useState<ExperienceLevel>("Fresher");
   const [targetCompany, setTargetCompany] = useState("");
+  const navigate = useNavigate();
 
   const handleKeyDown = (e: KeyboardEvent<HTMLInputElement>) => {
     if (e.key === "Enter" && input.trim()) {
@@ -67,6 +69,9 @@ const Form = () => {
           message: "Interview Created Successfully",
         };
         addNotification(newNotification);
+       // naviagate to the dashboard page
+       navigate("/dashboard"); 
+
       }
     } catch (error) {
       // console.error("Error creating interview:");
