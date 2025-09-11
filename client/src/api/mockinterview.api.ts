@@ -15,7 +15,7 @@ const axiosInstance = axios.create({
 // Create Interview
 export const createInterview = async (interviewData: MockInterview) => {
   try {
-    const response = await axiosInstance.post('/create', interviewData);
+    const response = await axiosInstance.post('create', interviewData);
     return response.data;
   } catch (error) {
     console.error('Error creating interview:',  (error as any).response.data.message);
@@ -26,7 +26,7 @@ export const createInterview = async (interviewData: MockInterview) => {
 // Get All Interviews (No user ID required)
 export const getAllInterviews = async () => {
   try {
-    const response = await axiosInstance.get('/');
+    const response = await axiosInstance.get('');
     return response.data;
   } catch (error) {
     console.error('Error fetching interviews:',  (error as any).response.data.message);
@@ -37,7 +37,7 @@ export const getAllInterviews = async () => {
 // Get Interview by ID
 export const getInterviewByID = async (interviewID: string) => {
   try {
-    const response = await axiosInstance.get(`/${
+    const response = await axiosInstance.get(`${
       interviewID}`);
     return response.data;
   } catch (error) {
@@ -49,7 +49,7 @@ export const getInterviewByID = async (interviewID: string) => {
 // Edit Interview
 export const editInterview = async (interviewID: string, interviewData: MockInterview) => {
   try {
-    const response = await axiosInstance.put(`/edit/${interviewID}`, interviewData);
+    const response = await axiosInstance.put(`edit/${interviewID}`, interviewData);
     return response.data;
   } catch (error) {
     console.error('Error editing interview:',  (error as any).response.data.message);
@@ -60,7 +60,7 @@ export const editInterview = async (interviewID: string, interviewData: MockInte
 // Delete Interview
 export const deleteInterview = async (interviewID: string) => {
   try {
-    const response = await axiosInstance.delete(`/delete/${interviewID}`);
+    const response = await axiosInstance.delete(`delete/${interviewID}`);
     return response.data;
   } catch (error) {
     console.error('Error deleting interview:',  (error as any).response.data.message);
